@@ -22,11 +22,12 @@ stages:
   train:
     cmd: python src/train.py data/features model.pkl
     deps:
-    - src/train.py
     - data/features
+    - src/train.py
     params:
-    - train.seed
+    - train.min_split
     - train.n_est
+    - train.seed
     outs:
     - model.pkl
   evaluate:
